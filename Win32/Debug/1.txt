@@ -1,0 +1,2 @@
+Select * from Kirim 
+Order by Nomi
