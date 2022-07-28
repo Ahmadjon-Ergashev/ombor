@@ -10,6 +10,7 @@
 #include <Vcl.Buttons.hpp>
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.Mask.hpp>
+#include <Vcl.ExtCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm5 : public TForm
 {

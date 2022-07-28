@@ -8,22 +8,22 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TForm5 *Form5;
+TForm5* Form5;
 //---------------------------------------------------------------------------
-__fastcall TForm5::TForm5(TComponent* Owner)
-	: TForm(Owner)
+__fastcall TForm5::TForm5(TComponent* Owner) : TForm(Owner) {}
+//---------------------------------------------------------------------------
+void __fastcall TForm5::BitBtn1Click(TObject* Sender)
 {
+	Form1->ADOTable1->Post();
+    Form1->BitBtn1->Click();
+    Form5->Close();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm5::BitBtn1Click(TObject *Sender)
+void __fastcall TForm5::BitBtn2Click(TObject* Sender)
 {
-Form1->ADOTable1->Post();
-Form5->Close();
+    Form1->ADOTable1->Cancel();
+    Form5->Close();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm5::BitBtn2Click(TObject *Sender)
-{
-Form1->ADOTable1->Cancel();
-Form5->Close();
-}
-//---------------------------------------------------------------------------
+
+

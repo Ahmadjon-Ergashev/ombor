@@ -1,2 +1,2 @@
 Select * from Kirim 
-Order by Nomi
+Order by Sanasi

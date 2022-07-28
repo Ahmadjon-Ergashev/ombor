@@ -25,8 +25,6 @@ __published:	// IDE-managed Components
 	TPanel *Panel1;
 	TBitBtn *BitBtn1;
 	TADOTable *ADOTable2;
-	TDBText *DBText1;
-	TLabel *Label1;
 	TLabel *Label2;
 	TLabel *Label3;
 	TLabel *Label4;
@@ -35,13 +33,27 @@ __published:	// IDE-managed Components
 	TLabel *Label7;
 	TLabel *Label8;
 	TLabel *Label9;
+	TADOCommand *ADOCommand1;
+	TADOQuery *ADOQuery2;
+	TWideStringField *ADOQuery1Nomi;
+	TFloatField *ADOQuery1Eni;
+	TFloatField *ADOQuery1Boyi;
+	TFloatField *ADOQuery1Soni;
+	TWideStringField *ADOQuery1Turi;
+	TFloatField *ADOQuery1m_kv_narxi;
+	TFloatField *ADOQuery1Umumiy_m_kv;
+	TFloatField *ADOQuery1Summasi;
+	TLabel *Label1;
+	TLabel *Label10;
 	void __fastcall BitBtn1Click(TObject *Sender);
 	void __fastcall DBGrid1TitleClick(TColumn *Column);
-private:	// User declarations
-public:		// User declarations
-	__fastcall TForm4(TComponent* Owner);
+	void __fastcall FormCreate(TObject* Sender);
+  private: // User declarations
+  public: // User declarations
+    __fastcall TForm4(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm4 *Form4;
 //---------------------------------------------------------------------------
 #endif
+

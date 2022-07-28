@@ -17,6 +17,8 @@
 #include <Vcl.Menus.hpp>
 #include <Vcl.Buttons.hpp>
 #include <Vcl.DBCtrls.hpp>
+#include <System.ImageList.hpp>
+#include <Vcl.ImgList.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -67,6 +69,9 @@ __published:	// IDE-managed Components
 	TLabel *Label8;
 	TLabel *Label9;
 	TMenuItem *N17;
+	TBitBtn *BitBtn5;
+	TMenuItem *N18;
+	TADOQuery *ADOQuery3;
 	void __fastcall N1Click(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall BitBtn1Click(TObject *Sender);
@@ -85,6 +90,9 @@ __published:	// IDE-managed Components
 	void __fastcall N16Click(TObject *Sender);
 	void __fastcall N11Click(TObject *Sender);
 	void __fastcall N10Click(TObject *Sender);
+	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall BitBtn5Click(TObject *Sender);
+	void __fastcall N18Click(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

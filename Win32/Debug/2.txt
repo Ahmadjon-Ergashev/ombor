@@ -1,0 +1,2 @@
+SELECT Nomi, Eni, Boyi, m_kv_narxi, Soni, Turi FROM Kirim 
+WHERE Nomi='Гилам' AND Eni=3 AND Boyi=4 AND m_kv_narxi=2 AND Turi='дона';

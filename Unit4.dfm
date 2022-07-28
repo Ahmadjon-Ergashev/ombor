@@ -3,15 +3,14 @@ object Form4: TForm4
   Top = 0
   Caption = #1061#1086#1083#1072#1090
   ClientHeight = 430
-  ClientWidth = 849
+  ClientWidth = 780
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
+  OnCreate = FormCreate
   TextHeight = 13
   object Label4: TLabel
     Left = 156
@@ -76,7 +75,7 @@ object Form4: TForm4
   object DBGrid1: TDBGrid
     Left = 0
     Top = 0
-    Width = 849
+    Width = 780
     Height = 379
     Align = alClient
     DataSource = DataSource1
@@ -94,50 +93,68 @@ object Form4: TForm4
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = [fsBold]
     OnTitleClick = DBGrid1TitleClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'Nomi'
+        Width = 125
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Eni'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Boyi'
+        Width = 60
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Soni'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Turi'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'm_kv_narxi'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Umumiy_m_kv'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Summasi'
+        Width = 200
+        Visible = True
+      end>
   end
   object Panel1: TPanel
     Left = 0
     Top = 379
-    Width = 849
+    Width = 780
     Height = 51
     Align = alBottom
     TabOrder = 1
-    ExplicitWidth = 845
     DesignSize = (
-      849
+      780
       51)
-    object DBText1: TDBText
-      Left = 100
-      Top = 18
-      Width = 65
-      Height = 17
-      DataField = 'Kurs'
-      DataSource = Form1.DataSource3
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clPurple
-      Font.Height = -13
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
-    object Label1: TLabel
-      Left = 0
-      Top = 18
-      Width = 94
-      Height = 16
-      Hint = #1044#1086#1083#1083#1072#1088' '#1050#1091#1088#1089#1080' '#1203#1086#1083#1072#1090#1080
-      Caption = #1044#1086#1083#1083#1072#1088' '#1082#1091#1088#1089#1080
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clTeal
-      Font.Height = -13
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      ParentShowHint = False
-      ShowHint = True
-    end
     object Label2: TLabel
-      Left = 152
+      Left = 10
       Top = 17
       Width = 98
       Height = 18
@@ -151,10 +168,9 @@ object Form4: TForm4
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
-      ExplicitLeft = 148
     end
     object Label3: TLabel
-      Left = 256
+      Left = 114
       Top = 17
       Width = 10
       Height = 18
@@ -168,10 +184,9 @@ object Form4: TForm4
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
-      ExplicitLeft = 252
     end
     object Label8: TLabel
-      Left = 392
+      Left = 176
       Top = 17
       Width = 133
       Height = 18
@@ -185,10 +200,9 @@ object Form4: TForm4
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
-      ExplicitLeft = 388
     end
     object Label9: TLabel
-      Left = 531
+      Left = 315
       Top = 17
       Width = 10
       Height = 18
@@ -202,12 +216,43 @@ object Form4: TForm4
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
-      ExplicitLeft = 527
+    end
+    object Label1: TLabel
+      Left = 453
+      Top = 17
+      Width = 44
+      Height = 24
+      Anchors = [akRight, akBottom]
+      Caption = #1084'_'#1082#1074
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clTeal
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object Label10: TLabel
+      Left = 498
+      Top = 17
+      Width = 15
+      Height = 18
+      Anchors = [akRight, akBottom]
+      Caption = '0'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clMaroon
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
     end
     object BitBtn1: TBitBtn
-      Left = 668
+      Left = 616
       Top = 10
-      Width = 169
+      Width = 152
       Height = 30
       Anchors = [akRight, akBottom]
       Caption = '&'#1071#1085#1075#1080#1083#1072#1096
@@ -237,7 +282,6 @@ object Form4: TForm4
       ParentFont = False
       TabOrder = 0
       OnClick = BitBtn1Click
-      ExplicitLeft = 664
     end
   end
   object ADOQuery1: TADOQuery
@@ -249,10 +293,53 @@ object Form4: TForm4
     DataSource = Form1.DataSource1
     Parameters = <>
     SQL.Strings = (
-      'select * from Holat'
-      'where (soni>0)and(boyi>0);')
+      'select * from Holat;')
     Left = 456
     Top = 304
+    object ADOQuery1Nomi: TWideStringField
+      DisplayLabel = #1053#1086#1084#1080
+      DisplayWidth = 125
+      FieldName = 'Nomi'
+      Size = 175
+    end
+    object ADOQuery1Eni: TFloatField
+      DisplayLabel = #1045#1085#1080
+      DisplayWidth = 50
+      FieldName = 'Eni'
+    end
+    object ADOQuery1Boyi: TFloatField
+      DisplayLabel = #1041#1118#1081#1080
+      DisplayWidth = 50
+      FieldName = 'Boyi'
+    end
+    object ADOQuery1Soni: TFloatField
+      DisplayLabel = #1057#1086#1085#1080
+      DisplayWidth = 50
+      FieldName = 'Soni'
+    end
+    object ADOQuery1Turi: TWideStringField
+      DisplayLabel = #1058#1091#1088#1080
+      DisplayWidth = 50
+      FieldName = 'Turi'
+      Size = 255
+    end
+    object ADOQuery1m_kv_narxi: TFloatField
+      DisplayLabel = #1053#1072#1088#1093#1080
+      DisplayWidth = 100
+      FieldName = 'm_kv_narxi'
+    end
+    object ADOQuery1Umumiy_m_kv: TFloatField
+      DisplayLabel = #1084'_'#1082#1074
+      DisplayWidth = 100
+      FieldName = 'Umumiy_m_kv'
+      ReadOnly = True
+    end
+    object ADOQuery1Summasi: TFloatField
+      DisplayLabel = #1057#1091#1084#1084#1072#1089#1080
+      DisplayWidth = 200
+      FieldName = 'Summasi'
+      ReadOnly = True
+    end
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
@@ -268,5 +355,17 @@ object Form4: TForm4
     TableName = 'Holat'
     Left = 520
     Top = 304
+  end
+  object ADOCommand1: TADOCommand
+    Connection = Form1.ADOConnection1
+    Parameters = <>
+    Left = 608
+    Top = 304
+  end
+  object ADOQuery2: TADOQuery
+    Connection = Form1.ADOConnection1
+    Parameters = <>
+    Left = 528
+    Top = 248
   end
 end

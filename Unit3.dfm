@@ -10,9 +10,9 @@ object Form3: TForm3
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
+  OnActivate = FormActivate
+  OnClose = FormClose
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 16
@@ -27,22 +27,9 @@ object Form3: TForm3
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label2: TLabel
-    Left = 16
-    Top = 59
-    Width = 40
-    Height = 19
-    Caption = #1058#1091#1088#1080
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object Label3: TLabel
     Left = 16
-    Top = 99
+    Top = 59
     Width = 31
     Height = 19
     Caption = #1069#1085#1080
@@ -55,10 +42,10 @@ object Form3: TForm3
   end
   object Label4: TLabel
     Left = 16
-    Top = 139
-    Width = 41
+    Top = 99
+    Width = 40
     Height = 19
-    Caption = #1041#1086#1081#1080
+    Caption = #1041#1118#1081#1080
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -118,6 +105,19 @@ object Form3: TForm3
     Font.Style = [fsBold]
     ParentFont = False
   end
+  object Label2: TLabel
+    Left = 16
+    Top = 139
+    Width = 40
+    Height = 19
+    Caption = #1058#1091#1088#1080
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
   object DBEdit7: TDBEdit
     Left = 408
     Top = 96
@@ -149,8 +149,8 @@ object Form3: TForm3
     TabOrder = 1
   end
   object BitBtn1: TBitBtn
-    Left = 198
-    Top = 192
+    Left = 270
+    Top = 184
     Width = 129
     Height = 31
     Kind = bkOK
@@ -159,8 +159,8 @@ object Form3: TForm3
     OnClick = BitBtn1Click
   end
   object BitBtn2: TBitBtn
-    Left = 351
-    Top = 193
+    Left = 423
+    Top = 185
     Width = 129
     Height = 30
     Kind = bkCancel
@@ -185,25 +185,9 @@ object Form3: TForm3
     Sorted = True
     TabOrder = 4
   end
-  object DBComboBox2: TDBComboBox
-    Left = 79
-    Top = 56
-    Width = 121
-    Height = 27
-    Style = csDropDownList
-    DataField = 'Turi'
-    DataSource = Form1.DataSource2
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clNavy
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 5
-  end
   object DBComboBox3: TDBComboBox
     Left = 79
-    Top = 96
+    Top = 56
     Width = 121
     Height = 27
     Style = csDropDownList
@@ -215,11 +199,11 @@ object Form3: TForm3
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 5
   end
   object DBComboBox4: TDBComboBox
     Left = 79
-    Top = 136
+    Top = 96
     Width = 121
     Height = 27
     Style = csDropDownList
@@ -231,7 +215,7 @@ object Form3: TForm3
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
   end
   object DBComboBox6: TDBComboBox
     Left = 408
@@ -247,7 +231,7 @@ object Form3: TForm3
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 7
   end
   object DBEdit5: TDBEdit
     Left = 408
@@ -262,11 +246,11 @@ object Form3: TForm3
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 8
   end
   object CheckBox1: TCheckBox
-    Left = 16
-    Top = 192
+    Left = 79
+    Top = 184
     Width = 153
     Height = 17
     Caption = #1052#1077#1090#1088#1083#1072#1073' '#1089#1086#1090#1080#1096
@@ -276,7 +260,26 @@ object Form3: TForm3
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 9
     OnClick = CheckBox1Click
+  end
+  object DBComboBox2: TDBComboBox
+    Left = 79
+    Top = 136
+    Width = 121
+    Height = 27
+    Style = csDropDownList
+    DataField = 'Turi'
+    DataSource = Form1.DataSource2
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Items.Strings = (
+      #1076#1086#1085#1072
+      #1084#1077#1090#1088)
+    ParentFont = False
+    TabOrder = 10
   end
 end
